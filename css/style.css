@@ -13,7 +13,7 @@
 	--card-gap: 30px;
 
 	--animation-cube: cubic-bezier(0.4, 0, 0.2, 1);
-	--animation-timer: 2250ms;
+	--animation-timer: 250ms;
 }
 
 body {
