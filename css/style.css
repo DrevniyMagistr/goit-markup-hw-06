@@ -13,7 +13,7 @@
   --card-gap: 30px;
 
   --animation-cube: cubic-bezier(0.4, 0, 0.2, 1);
-  --animation-timer:250ms;
+  --animation-timer: 250ms;
 }
 
 body {
@@ -68,8 +68,18 @@ body {
 }
 
 .button {
+  display: block;
+  margin: 0 auto;
   border: none;
   border-radius: 4px;
+  background-color: var(--accent-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(30 / 16);
+  letter-spacing: 0.06em;
+  color: var(--title-accent-color);
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /* todo______________________Global-style_______________________________________ */
@@ -179,13 +189,8 @@ body {
 }
 
 .hero-button {
+  margin: 0 auto;
   padding: 10px 32px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: calc(30 / 16);
-  letter-spacing: 0.06em;
-  color: var(--title-accent-color);
-  background-color: var(--accent-color);
   transition: background-color var(--animation-timer) var(--animation-cube);
 }
 
@@ -209,7 +214,7 @@ body {
 }
 
 .advantages-item-title,
-.footer-social-title {
+.footer-title {
   font-weight: 700;
   text-transform: uppercase;
   color: var(--title-primary-color);
@@ -321,7 +326,9 @@ body {
   align-items: center;
   justify-content: center;
   padding: 12px;
-  transition: background-color var(--animation-timer) var(--animation-cube), color var(--animation-timer) var(--animation-cube), border-radius var(--animation-timer) var(--animation-cube);
+  transition: background-color var(--animation-timer) var(--animation-cube),
+    color var(--animation-timer) var(--animation-cube),
+    border-radius var(--animation-timer) var(--animation-cube);
 }
 
 .about-social-link:hover,
@@ -359,7 +366,8 @@ body {
   padding: 14px 30px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
-  transition: color var(--animation-timer) var(--animation-cube),  border-color var(--animation-timer) var(--animation-cube);
+  transition: color var(--animation-timer) var(--animation-cube),
+    border-color var(--animation-timer) var(--animation-cube);
 }
 
 .client-list-link:hover,
@@ -524,7 +532,7 @@ body {
   margin-left: 85px;
 }
 
-.footer-social-title {
+.footer-title {
   margin-bottom: 20px;
   color: var(--title-accent-color);
 }
@@ -557,6 +565,56 @@ body {
   width: 20px;
   height: 20px;
   fill: currentColor;
+}
+
+.footer-form-block {
+  margin-top: 15px;
+  margin-left: 93px;
+}
+
+.footer-form {
+}
+.footer-form-field {
+  position: relative;
+  display: inline-flex;
+}
+.footer-form-input {
+  width: 355px;
+  color: var(--text-primary-color);
+  font-size: 16px;
+  line-height: calc(24 / 16);
+  padding: 15px 0 15px 16px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  transition: background-color var(--animation-timer) var(--animation-cube);
+}
+
+.form-input:hover,
+.form-input:focus {
+  background-color: var(--primary-bg-color);
+}
+
+.form-imput::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  line-height: calc(24 / 16);
+  letter-spacing: 0.03;
+}
+
+.submit-btn {
+  display: inline-block;
+  position: relative;
+  padding-left: 28px;
+  padding-right: 62px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  margin-left: 12px;
+}
+
+.icon-submit {
+  position: absolute;
+  top: 13px;
+  right: 28px;
 }
 
 /* *_____________________________ Footer _____________________________*/
@@ -615,6 +673,117 @@ body {
   width: 18px;
   height: 18px;
   background-image: url(../images/icons/close-btn.svg);
+}
+
+.modal-form {
+  padding: 40px;
+}
+
+.form-text {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: calc(23 / 20);
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--title-primary-color);
+  margin-bottom: 12px;
+}
+.form-field {
+  margin-bottom: 10px;
+}
+.form-label {
+  display: block;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+  color: var(--text-primary-color);
+  margin-bottom: 4px;
+}
+.form-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 12px 16px 12px 42px;
+  transition: border var(--animation-timer) var(--animation-cube);
+}
+
+.icon-wrapper {
+  display: flex;
+  position: relative;
+}
+.icon-input {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  fill: var(--title-primary-color);
+  transition: fill var(--animation-timer) var(--animation-cube);
+}
+
+.form-input:focus,
+.form-input:hover {
+  border: 1px solid var(--accent-color);
+}
+
+.form-input:focus + .icon-input,
+.form-input:hover + .icon-input {
+  fill: var(--accent-color);
+}
+
+.input-area {
+  height: 120px;
+  padding: 12px 16px;
+  resize: none;
+}
+.input-area::placeholder {
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+
+.chekbox-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.check-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 15px;
+  border:1px solid var(--title-primary-color);
+  border-radius: 2px;
+  margin-right: 7px;
+  fill:transparent;
+  transition: background-color var(--animation-timer) var(--animation-cube), fill var(--animation-timer) var(--animation-cube), border var(--animation-timer) var(--animation-cube);
+}
+
+.form-checkbox:checked + .chekbox-description .check-wrapper{
+  background-color: var(--accent-color);
+  fill: var(--primary-bg-color);
+  border:none;
+}
+
+.form-check-link {
+  letter-spacing: 0.03em;
+  text-decoration-line: underline;
+  color: #2196f3;
+}
+
+.button-modal {
+  margin-top: 30px;
+  padding-right: 52px;
+  padding-left: 52px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color var(--animation-timer) var(--animation-cube);
+}
+
+.button-modal:hover {
+  background-color: var(--hover-btn-color);
 }
 
 /* *_____________________________ Modal _____________________________*/
